@@ -13,28 +13,31 @@ body {
 }
 
 #app {
-    width: 400px;
-    height: 400px;
-    margin: 80px auto;
-    position: relative;
+    width: 65vw;
+    height: auto;
+    margin: 50px auto;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .marker {
-    position: absolute;
-    width: 60px;
-    left: 172px;
-    top: -20px;
+    /* position: absolute; */
+    width: 50px;
+    /* left: 172px; */
     z-index: 2;
 }
 
 .wheel {
-    width: 100%;
-    height: 100%;
+    width: 27vw;
+    height: auto;
 }
 
 .button {
     display: block;
-    width: 250px;
+    width: 200px;
     margin: 40px auto;
     cursor: pointer;
 }
@@ -45,7 +48,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 200px;
-    height: 50px;
+    height: 70px;
     border: 1px solid whitesmoke;
     border-radius: 20px;
     text-align: center;

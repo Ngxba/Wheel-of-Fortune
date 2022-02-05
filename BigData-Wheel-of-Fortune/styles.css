@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Product Sans';
+}
+
+body {
+    background-image:  url('https://i.pinimg.com/originals/b4/77/e0/b477e0eed08653996a28df1325b27278.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: red;
+}
+
+#app {
+    width: 65vw;
+    height: auto;
+    margin: 50px auto;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.marker {
+    /* position: absolute; */
+    width: 50px;
+    /* left: 172px; */
+    z-index: 2;
+}
+
+.wheel {
+    width: 27vw;
+    height: auto;
+}
+
+.button {
+    display: block;
+    width: 200px;
+    margin: 40px auto;
+    cursor: pointer;
+}
+
+.display {
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 70px;
+    border: 1px solid whitesmoke;
+    border-radius: 20px;
+    text-align: center;
+    font-family: "Brush Script MT";
+    font-size: 2rem;
+    margin: 20px auto;
+}
+
+.button:hover {
+    opacity: 0.7;
+    transition-duration: 0.5s;
+}
+
+.blur {
+    animation: blur 10s;
+}
+
+@keyframes blur {
+    0% {
+        filter: blur(1.5px);
+    }
+    80% {
+        filter: blur(1.5px);
+    }
+    100% {
+        filter: blur(0px);
+    }
+}

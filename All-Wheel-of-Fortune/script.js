@@ -10,26 +10,27 @@
     clickAudio.src = "./Mouse-Click.mp3";
     const blackgroundMusic = new Audio();
     blackgroundMusic.src = "./Xo-So.mp3";
-    blackgroundMusic.volume = 0.2;
+    blackgroundMusic.volume = 0.4;
     blackgroundMusic.loop = true;
 
     const spinningAudio = new Audio();
     spinningAudio.src = "./Spinning-Sound.mp3";
+    spinningAudio.volume = 0.7;
 
-    document.body.addEventListener("click", function () {
-        blackgroundMusic.play();
-    })
+    // document.body.addEventListener("click", function () {
+    //     blackgroundMusic.play();
+    // })
 
 
     const moneyZone = {
-        1: "100k",
-        2: "50k",
-        3: "200k",
-        4: "500k",
-        5: "100k",
-        6: "50k",
-        7: "200k",
-        8: "500k",
+        1: "20k",
+        2: "10k",
+        3: "20k",
+        4: "50k",
+        5: "20k",
+        6: "20k",
+        7: "20k",
+        8: "10k"
     }
 
     const handleWin = (actualDeg) => {
@@ -52,6 +53,7 @@
     startButton.addEventListener('click', () => {
         clickAudio.play();
         spinningAudio.play();
+        blackgroundMusic.play();
         display.innerHTML = "-";
         startButton.style.pointerEvents = 'none';
         // reset display
@@ -61,14 +63,19 @@
             wheel.style.transform = `rotate(${deg}deg)`
             wheel.classList.add('blur');
         }, 800)
-
+        
     })
 
     wheel.addEventListener('transitionend', () => {
         conffettiStart();
         conffettiStop();
+        setTimeout(function () {
+            blackgroundMusic.pause();
+            spinningAudio.pause();
+            spinningAudio.currentTime = 0;
+            startButton.style.pointerEvents = 'auto';
+        }, 2000)
         wheel.classList.remove('blur');
-        startButton.style.pointerEvents = 'auto';
         wheel.style.transition = 'none';
         const actualDeg = deg % 360;
         wheel.style.transform = `rotate(${actualDeg}deg)`;
